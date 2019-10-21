@@ -8,7 +8,7 @@ GraphDB-Free is the Free Edition of the triplestore from Ontotext (http://ontote
 ## Image tags
 -------------
 
-  - latest, 9.0.0 => [Dockerfile](https://github.com/internetofwater/docker-graphdb-free/blob/master/9.0.0/Dockerfile)
+  - latest, 9.0.0 => [Dockerfile](https://github.com/internetofwater/docker-graphdb-free/blob/master/Dockerfile)
 
 
 ## Usage
