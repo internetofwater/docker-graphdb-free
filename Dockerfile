@@ -1,9 +1,9 @@
-FROM ubuntu:17.04
+FROM ubuntu:18.04
 
-MAINTAINER Ivan Subotic "ivan.subotic@unibas.ch"
+MAINTAINER Kyle Onda "kyle.onda@duke.edu"
 
 # Silence debconf messages
-RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+#RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
 # Install.
 RUN \
@@ -19,9 +19,10 @@ ENV JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 
 # Install GraphDB-Free and clean up
 RUN \
-  curl -sS -o /tmp/graphdb.zip -L http://go.pardot.com/e/45622/7a-graphdb-free-8-2-0-dist-zip/4rzsm6/1106070369 && \
+  curl -sS -o /tmp/graphdb.zip -L https://storage.cloud.google.com/graphdb_bucket_kso/graphdb-free-9.0.0-dist.zip?au
+thuser=1 && \
   unzip /tmp/graphdb.zip -d /tmp && \
-  mv /tmp/graphdb-free-8.2.0 /graphdb && \
+  mv /tmp/graphdb-free-9.0.0 /graphdb && \
   git clone -b develop --single-branch --depth=1 https://github.com/dhlab-basel/Knora.git /knora && \
   cp /knora/webapi/scripts/KnoraRules.pie /graphdb && \
   rm /tmp/graphdb.zip && \
