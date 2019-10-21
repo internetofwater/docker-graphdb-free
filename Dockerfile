@@ -23,10 +23,6 @@ RUN \
 thuser=1 && \
   unzip /tmp/graphdb.zip -d /tmp && \
   mv /tmp/graphdb-free-9.0.0 /graphdb && \
-  git clone -b develop --single-branch --depth=1 https://github.com/dhlab-basel/Knora.git /knora && \
-  cp /knora/webapi/scripts/KnoraRules.pie /graphdb && \
-  rm /tmp/graphdb.zip && \
-  rm -rf /knora
 
 # Set GraphDB Max and Min Heap size
 ENV GDB_HEAP_SIZE="4g"
