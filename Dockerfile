@@ -19,8 +19,7 @@ ENV JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 
 # Install GraphDB-Free and clean up
 RUN \
-  curl -sS -o /tmp/graphdb.zip -L https://storage.cloud.google.com/graphdb_bucket_kso/graphdb-free-9.0.0-dist.zip?au
-thuser=1 && \
+  curl -sS -o /tmp/graphdb.zip -L https://storage.cloud.google.com/graphdb_bucket_kso/graphdb-free-9.0.0-dist.zip?authuser=1 && \
   unzip /tmp/graphdb.zip -d /tmp && \
   mv /tmp/graphdb-free-9.0.0 /graphdb && \
 
